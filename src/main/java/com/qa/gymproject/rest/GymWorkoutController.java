@@ -1,4 +1,4 @@
-package com.qa.gymproject.controller;
+package com.qa.gymproject.rest;
 
 import java.util.List;
 
