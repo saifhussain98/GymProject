@@ -15,7 +15,6 @@ public class GymWorkout {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // AI
 	private Integer id;
 
-	@Column(name = "gymWorkoutName", nullable = false, unique = true)
 	private String muscleGroup;
 
 	private String exercise;

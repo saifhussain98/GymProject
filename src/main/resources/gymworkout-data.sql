@@ -1,6 +1,6 @@
-INSERT INTO `gymworkout` (
+INSERT INTO `gym_workout` (
 	`id`,
-	`muscle group`,
+	`muscle_group`,
 	`exercise`,
 	`weight`,
 	`sets`,
