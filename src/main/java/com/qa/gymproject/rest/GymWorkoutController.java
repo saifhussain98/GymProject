@@ -26,13 +26,6 @@ public class GymWorkoutController {
 	@Autowired
 	private GymWorkoutService service; // dependency
 
-	@GetMapping("/hello")
-	public String helloWorld() {
-		String a = "Hello, ";
-		String b = "World!";
-		return a + b;
-	}
-
 	@GetMapping("/demoGymWorkout")
 	public GymWorkout getDemoGymWorkout() {
 		return new GymWorkout("Chest", "Bench Press", 32, 3, 8);
