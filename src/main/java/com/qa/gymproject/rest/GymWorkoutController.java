@@ -54,7 +54,7 @@ public class GymWorkoutController {
 		return new ResponseEntity<GymWorkout>(created, HttpStatus.CREATED);
 	}
 
-	@PatchMapping("/updateDino/{id}")
+	@PatchMapping("/updateGymWorkout/{id}")
 	public GymWorkout update(@PathVariable("id") int id, @PathParam("muscleGroup") String muscleGroup,
 			@PathParam("exercise") String exercise, @PathParam("weight") Integer weight, @PathParam("sets") Integer sets, @PathParam("reps") Integer reps) {
 		return this.service.update(id, muscleGroup, exercise, weight, sets, reps);

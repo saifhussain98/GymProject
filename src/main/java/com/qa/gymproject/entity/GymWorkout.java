@@ -156,7 +156,7 @@ public class GymWorkout {
 
 	@Override
 	public String toString() {
-		return "Dinosaur [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
+		return "GynWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
 	}
 
 }
