@@ -2,7 +2,6 @@ package com.qa.gymproject.entity;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -99,41 +98,6 @@ public class GymWorkout {
 		this.reps = reps;
 	}
 	
-	
-
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + this.age;
-//		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
-//		result = prime * result + ((this.species == null) ? 0 : this.species.hashCode());
-//		return result;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		GymWorkout other = (GymWorkout) obj;
-//		if (this.age != other.age)
-//			return false;
-//		if (this.name == null) {
-//			if (other.name != null)
-//				return false;
-//		} else if (!this.name.equals(other.name))
-//			return false;
-//		if (this.species == null) {
-//			if (other.species != null)
-//				return false;
-//		} else if (!this.species.equals(other.species))
-//			return false;
-//		return true;
-//	}
 
 	@Override
 	public int hashCode() {
@@ -156,7 +120,7 @@ public class GymWorkout {
 
 	@Override
 	public String toString() {
-		return "GynWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
+		return "GymWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
 	}
 
 }

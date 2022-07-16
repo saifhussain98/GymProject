@@ -36,14 +36,14 @@ public class GymWorkoutServiceDB implements GymWorkoutService {
 		GymWorkout toUpdate = this.getById(id);
 		if (muscleGroup != null)
 			toUpdate.setMuscleGroup(muscleGroup);
+		if (exercise != null)
+			toUpdate.setExercise(exercise);
 		if (weight != null)
 			toUpdate.setWeight(weight);
 		if (sets != null)
 			toUpdate.setSets(sets);
 		if (reps != null)
 			toUpdate.setReps(reps);
-		if (exercise != null)
-			toUpdate.setExercise(exercise);
 		return this.repo.save(toUpdate);
 	}
 

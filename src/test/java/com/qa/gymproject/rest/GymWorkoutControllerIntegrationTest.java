@@ -1,6 +1,5 @@
 package com.qa.gymproject.rest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
@@ -61,8 +60,8 @@ public class GymWorkoutControllerIntegrationTest {
 
 	@Test
 	void testUpdate() throws Exception {
-		GymWorkout updated = new GymWorkout(1, "Shoulders", "Military", 20, 4, 10);
-		this.mvc.perform(patch("/updateGymWorkout/1?muscleGroup=Shoulders&exercise=Military&weight=20&sets=4&reps=10")).andExpect(status().isOk())
+		GymWorkout updated = new GymWorkout(1, "Shoulders", "Pullups", 10, 2, 8);
+		this.mvc.perform(patch("/updateGymWorkout/1?muscleGroup=Shoulders&exercise=Pullups&weight=10&sets=2&reps=8")).andExpect(status().isOk())
 				.andExpect(content().json(this.mapper.writeValueAsString(updated)));
 	}
 
