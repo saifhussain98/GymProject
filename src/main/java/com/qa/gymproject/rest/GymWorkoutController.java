@@ -18,18 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.gymproject.entity.GymWorkout;
 import com.qa.gymproject.service.GymWorkoutService;
-
-@CrossOrigin
 @RestController
+@CrossOrigin
 public class GymWorkoutController {
 
 	@Autowired
 	private GymWorkoutService service; // dependency
-
-	@GetMapping("/demoGymWorkout")
-	public GymWorkout getDemoGymWorkout() {
-		return new GymWorkout("Chest", "Bench Press", 32, 3, 8);
-	}
 
 	@GetMapping("/getGymWorkout/{id}")
 	public GymWorkout getById(@PathVariable int id) {

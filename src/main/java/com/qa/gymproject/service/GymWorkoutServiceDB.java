@@ -33,7 +33,7 @@ public class GymWorkoutServiceDB implements GymWorkoutService {
 
 	@Override
 	public GymWorkout update(int id, String muscleGroup, String exercise, Integer weight, Integer sets, Integer reps) {
-		GymWorkout toUpdate = this.getById(id);
+		GymWorkout toUpdate = repo.findById(id).get();
 		if (muscleGroup != null)
 			toUpdate.setMuscleGroup(muscleGroup);
 		if (exercise != null)

@@ -1,5 +1,4 @@
 INSERT INTO `gym_workout` (
-	`id`,
 	`muscle_group`,
 	`exercise`,
 	`weight`,
@@ -7,7 +6,6 @@ INSERT INTO `gym_workout` (
 	`reps`
 ) 
 VALUES (
-	default,
 	'Chest',
 	'Bench Press',
 	32,

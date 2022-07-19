@@ -6,11 +6,11 @@ document.querySelector("#gym").addEventListener("submit", function (event) {
     console.log("THIS:", this);
 
     const data = {
-        muscleGroup: this.musclegroup.value,
-        exercise: this.exercise.value,
-        weight: this.weight.value,
-        sets: this.sets.value,
-        reps: this.reps.value
+        muscleGroup: this.gymWorkoutmusclegroup.value,
+        exercise: this.gymWorkoutexercise.value,
+        weight: this.gymWorkoutWeight.value,
+        sets: this.gymWorkoutSets.value,
+        reps: this.gymWorkoutReps.value
     }
 
     console.log("DATA:", data);
