@@ -100,25 +100,6 @@ public class GymWorkout {
 	
 
 	@Override
-	public int hashCode() {
-		return Objects.hash(exercise, id, muscleGroup, reps, sets, weight);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		GymWorkout other = (GymWorkout) obj;
-		return Objects.equals(exercise, other.exercise) && Objects.equals(id, other.id)
-				&& Objects.equals(muscleGroup, other.muscleGroup) && reps == other.reps && sets == other.sets
-				&& weight == other.weight;
-	}
-
-	@Override
 	public String toString() {
 		return "GymWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
 	}
