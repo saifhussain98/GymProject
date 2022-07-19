@@ -65,8 +65,8 @@ public class GymWorkoutControllerIntegrationTest {
 				.andExpect(content().json(this.mapper.writeValueAsString(updated)));
 	}
 
-//	@Test
-//	void testDelete() throws Exception {
-//		this.mvc.perform(delete("/removeGymWorkout/1")).andExpect(status().isNoContent());
-//	}
+	@Test
+	void testDelete() throws Exception {
+		this.mvc.perform(delete("/removeGymWorkout/1")).andExpect(status().isNoContent());
+	}
 }
