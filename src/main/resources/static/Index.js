@@ -1,8 +1,7 @@
 "use strict";
 
-document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault(); // turns off the page refresh/redirect
-    // setTimeout(() => console.log("YO!"), 1_000);
+document.querySelector("#gym").addEventListener("submit", function (event) {
+    event.preventDefault(); 
 
     console.log("THIS:", this);
 
