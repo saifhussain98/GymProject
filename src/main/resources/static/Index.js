@@ -6,8 +6,8 @@ document.querySelector("#gym").addEventListener("submit", function (event) {
     console.log("THIS:", this);
 
     const data = {
-        muscleGroup: this.gymWorkoutmusclegroup.value,
-        exercise: this.gymWorkoutexercise.value,
+        muscleGroup: this.gymWorkoutMuscleGroup.value,
+        exercise: this.gymWorkoutExercise.value,
         weight: this.gymWorkoutWeight.value,
         sets: this.gymWorkoutSets.value,
         reps: this.gymWorkoutReps.value
@@ -52,7 +52,7 @@ function renderGymWorkouts() {
                 gymWorkoutSets.innerText = gymWorkout.sets;
                 gymWorkoutDiv.appendChild(gymWorkoutSets);
 
-                const gymWorkoutreps = document.createElement("p");
+                const gymWorkoutReps = document.createElement("p");
                 gymWorkoutReps.innerText = gymWorkout.reps;
                 gymWorkoutDiv.appendChild(gymWorkoutReps);
 
@@ -62,7 +62,7 @@ function renderGymWorkouts() {
 
                 const gymWorkoutExercise = document.createElement("p");
                 gymWorkoutExercise.innerText = gymWorkout.exercise;
-                gymWorkoutDiv.appendChild(gymWorkout);
+                gymWorkoutDiv.appendChild(gymWorkoutExercise);
 
                 const gymWorkoutDelete = document.createElement('button');
                 gymWorkoutDelete.innerText = "DELETE";
@@ -77,6 +77,14 @@ function renderGymWorkouts() {
             }
         })
         .catch(err => console.error(err));
+}
+
+const updateGymWorkout = (id) => {
+    axios.delete("http://localhost:8080/updateGymWorkout/" + id)
+            .then(res => {
+                console.log("Update successful");
+                renderGymWorkouts();
+            }).catch(err => console.error(err));
 }
 
 const deleteGymWorkout = (id) => {
