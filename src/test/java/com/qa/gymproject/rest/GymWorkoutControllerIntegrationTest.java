@@ -36,6 +36,28 @@ public class GymWorkoutControllerIntegrationTest {
 
 	@Autowired
 	private ObjectMapper mapper;
+	
+	@Test
+    void testReadById() throws Exception {
+		GymWorkout testGymWorkoutId = new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8);
+        this.mvc.perform(get("/getGymWorkout/1")).andExpect(status().isOk())
+                .andExpect(content().json(this.mapper.writeValueAsString(testGymWorkoutId)));
+    }
+	
+	@Test
+	void testRead() throws Exception {
+		List<GymWorkout> gymWorkouts = new ArrayList<>();
+		gymWorkouts.add(new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8));
+		this.mvc.perform(get("/getGymWorkouts")).andExpect(status().isOk())
+				.andExpect(content().json(this.mapper.writeValueAsString(gymWorkouts)));
+	}
+	
+    @Test
+    void testReadByMuscleGroup() throws Exception {
+    	GymWorkout testGymWorkoutMuscleGroup = new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8);
+        this.mvc.perform(get("/getGymWorkoutByMuscleGroup/Chest")).andExpect(status().isOk())
+                .andExpect(content().json(this.mapper.writeValueAsString(testGymWorkoutMuscleGroup)));
+    }
 
 	@Test
 	void testCreate() throws Exception {
@@ -52,13 +74,6 @@ public class GymWorkoutControllerIntegrationTest {
 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
 
-	@Test
-	void testRead() throws Exception {
-		List<GymWorkout> gymWorkouts = new ArrayList<>();
-		gymWorkouts.add(new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8));
-		this.mvc.perform(get("/getGymWorkouts")).andExpect(status().isOk())
-				.andExpect(content().json(this.mapper.writeValueAsString(gymWorkouts)));
-	}
 
 	@Test
 	void testUpdate() throws Exception {
