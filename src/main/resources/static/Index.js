@@ -44,9 +44,17 @@ function renderGymWorkouts() {
                 gymWorkoutDiv.classMuscleGroup = "card-body";
                 gymWorkoutCard.appendChild(gymWorkoutDiv);
 
-                const gymWorkoutMuscleGroup = document.createElement("h2");
+                const gymWorkoutMuscleGroup = document.createElement("h5");
                 gymWorkoutMuscleGroup.innerText = gymWorkout.muscleGroup;
                 gymWorkoutDiv.appendChild(gymWorkoutMuscleGroup);
+
+                const gymWorkoutExercise = document.createElement("p");
+                gymWorkoutExercise.innerText = gymWorkout.exercise;
+                gymWorkoutDiv.appendChild(gymWorkoutExercise);
+
+                const gymWorkoutWeight = document.createElement("p");
+                gymWorkoutWeight.innerText = gymWorkout.weight + " Kg";
+                gymWorkoutDiv.appendChild(gymWorkoutWeight);
 
                 const gymWorkoutSets = document.createElement("p");
                 gymWorkoutSets.innerText = gymWorkout.sets;
@@ -56,19 +64,22 @@ function renderGymWorkouts() {
                 gymWorkoutReps.innerText = gymWorkout.reps;
                 gymWorkoutDiv.appendChild(gymWorkoutReps);
 
-                const gymWorkoutWeight = document.createElement("p");
-                gymWorkoutWeight.innerText = gymWorkout.weight + " Kg.";
-                gymWorkoutDiv.appendChild(gymWorkoutWeight);
+                const gymWorkoutUpdate = document.createElement('button');
+                gymWorkoutUpdate.innerText = "UPDATE";
+                gymWorkoutUpdate.classList.add("btn", "btn-secondary");
+                gymWorkoutUpdate.addEventListener("click", () => {
+                    console.log("GYMWORKOUT: ", gymWorkout);
+                    updateGymWorkout(gymWorkout.id);
+                });
+                gymWorkoutDiv.appendChild(gymWorkoutUpdate);
 
-                const gymWorkoutExercise = document.createElement("p");
-                gymWorkoutExercise.innerText = gymWorkout.exercise;
-                gymWorkoutDiv.appendChild(gymWorkoutExercise);
+                output.appendChild(gymWorkoutCol);
 
                 const gymWorkoutDelete = document.createElement('button');
                 gymWorkoutDelete.innerText = "DELETE";
                 gymWorkoutDelete.classList.add("btn", "btn-danger");
                 gymWorkoutDelete.addEventListener("click", () => {
-                    console.log("GYMWORKOUT: ", gymWorkout);
+                    alert("This entry will be deleted");
                     deleteGymWorkout(gymWorkout.id);
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutDelete);
@@ -80,7 +91,7 @@ function renderGymWorkouts() {
 }
 
 const updateGymWorkout = (id) => {
-    axios.delete("http://localhost:8080/updateGymWorkout/" + id)
+    axios.update("http://localhost:8080/updateGymWorkout/" + id)
             .then(res => {
                 console.log("Update successful");
                 renderGymWorkouts();
