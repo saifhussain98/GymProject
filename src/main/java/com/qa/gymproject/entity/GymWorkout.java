@@ -1,5 +1,7 @@
 package com.qa.gymproject.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +19,9 @@ public class GymWorkout {
 	private String exercise;
 
 	private int weight;
-	
+
 	private int sets;
-	
+
 	private int reps;
 
 	public GymWorkout() {
@@ -79,7 +81,7 @@ public class GymWorkout {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	
+
 	public int getSets() {
 		return this.sets;
 	}
@@ -87,7 +89,7 @@ public class GymWorkout {
 	public void setSets(int sets) {
 		this.sets = sets;
 	}
-	
+
 	public int getReps() {
 		return this.reps;
 	}
@@ -95,11 +97,29 @@ public class GymWorkout {
 	public void setReps(int reps) {
 		this.reps = reps;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(exercise, muscleGroup, reps, sets, weight);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		GymWorkout other = (GymWorkout) obj;
+		return Objects.equals(exercise, other.exercise) && Objects.equals(muscleGroup, other.muscleGroup)
+				&& reps == other.reps && sets == other.sets && weight == other.weight;
+	}
 
 	@Override
 	public String toString() {
-		return "GymWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight + ", sets=" + this.sets + ", reps=" + this.reps + "]";
+		return "GymWorkout [muscleGroup=" + this.muscleGroup + ", exercise=" + this.exercise + ", weight=" + this.weight
+				+ ", sets=" + this.sets + ", reps=" + this.reps + "]";
 	}
 
 }
