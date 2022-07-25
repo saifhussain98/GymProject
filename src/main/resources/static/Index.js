@@ -13,6 +13,7 @@ document.querySelector("#gym").addEventListener("submit", function (event) {
         reps: this.gymWorkoutReps.value
     }
 
+
     console.log("DATA:", data);
 
     axios.post("http://localhost:8080/createGymWorkout", data)
@@ -25,6 +26,7 @@ document.querySelector("#gym").addEventListener("submit", function (event) {
             .catch(err => console.error(err));
 });
 
+
 const output = document.querySelector("#output");
 
 function renderGymWorkouts() {
@@ -34,7 +36,7 @@ function renderGymWorkouts() {
             output.innerHTML = "";
             for (let gymWorkout of res.data) {
                 const gymWorkoutCol = document.createElement("div");
-                gymWorkoutCol.classMuscleGroup = "col";
+                gymWorkoutCol.classMuscleGroup = "col-3";
 
                 const gymWorkoutCard = document.createElement("div");
                 gymWorkoutCard.classMuscleGroup = "card";
@@ -79,7 +81,7 @@ function renderGymWorkouts() {
                 gymWorkoutDelete.innerText = "DELETE";
                 gymWorkoutDelete.classList.add("btn", "btn-danger");
                 gymWorkoutDelete.addEventListener("click", () => {
-                    alert("You done fucked up");
+                    alert("Deleted");
                     deleteGymWorkout(gymWorkout.id);
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutDelete);
@@ -88,6 +90,7 @@ function renderGymWorkouts() {
             }
         })
         .catch(err => console.error(err));
+
 }
 
 const updateGymWorkout = (id) => {
@@ -96,6 +99,7 @@ const updateGymWorkout = (id) => {
                 console.log("Update successful");
                 renderGymWorkouts();
             }).catch(err => console.error(err));
+
 }
 
 const deleteGymWorkout = (id) => {
@@ -104,6 +108,7 @@ const deleteGymWorkout = (id) => {
                 console.log("Delete successful");
                 renderGymWorkouts();
             }).catch(err => console.error(err));
+
 }
 
 renderGymWorkouts();
