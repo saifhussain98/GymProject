@@ -79,7 +79,7 @@ function renderGymWorkouts() {
                 gymWorkoutDelete.innerText = "DELETE";
                 gymWorkoutDelete.classList.add("btn", "btn-danger");
                 gymWorkoutDelete.addEventListener("click", () => {
-                    alert("This entry will be deleted");
+                    alert("You done fucked up");
                     deleteGymWorkout(gymWorkout.id);
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutDelete);
@@ -91,7 +91,7 @@ function renderGymWorkouts() {
 }
 
 const updateGymWorkout = (id) => {
-    axios.update("http://localhost:8080/updateGymWorkout/" + id)
+    axios.patch("http://localhost:8080/updateGymWorkout/" + id + "?muscleGroup=" + this.gymWorkoutMuscleGroup.value + "&exercise=" + this.gymWorkoutExercise.value + "&weight=" + this.gymWorkoutWeight.value + "&sets=" + this.gymWorkoutSets.value + "&reps=" + this.gymWorkoutReps.value)
             .then(res => {
                 console.log("Update successful");
                 renderGymWorkouts();
