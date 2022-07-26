@@ -81,8 +81,11 @@ function renderGymWorkouts() {
                 gymWorkoutDelete.innerText = "DELETE";
                 gymWorkoutDelete.classList.add("btn", "btn-danger");
                 gymWorkoutDelete.addEventListener("click", () => {
-                    alert("Deleted");
-                    deleteGymWorkout(gymWorkout.id);
+                    if (confirm('Are you sure?')) {
+                        txt = console.log(deleteGymWorkout(gymWorkout.id));
+                    } else {
+                    txt = "You pressed cancel";
+                    }
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutDelete);
 
