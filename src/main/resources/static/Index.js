@@ -71,9 +71,9 @@ function renderGymWorkouts() {
                 gymWorkoutUpdate.classList.add("btn", "btn-secondary");
                 gymWorkoutUpdate.addEventListener("click", () => {
                     if (confirm('Are you sure?')) {
-                        txt = console.log(updateGymWorkout(gymWorkout.id));
+                        console.log(updateGymWorkout(gymWorkout.id));
                     } else {
-                    txt = "You pressed cancel";
+                        console.log("You pressed cancel");
                     }
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutUpdate);
@@ -85,9 +85,9 @@ function renderGymWorkouts() {
                 gymWorkoutDelete.classList.add("btn", "btn-danger");
                 gymWorkoutDelete.addEventListener("click", () => {
                     if (confirm('Are you sure?')) {
-                        txt = console.log(deleteGymWorkout(gymWorkout.id));
+                        console.log(deleteGymWorkout(gymWorkout.id));
                     } else {
-                    txt = "You pressed cancel";
+                    console.log("You pressed cancel");
                     }
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutDelete);
