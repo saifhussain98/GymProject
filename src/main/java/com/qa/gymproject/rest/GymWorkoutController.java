@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.gymproject.entity.GymWorkout;
 import com.qa.gymproject.service.GymWorkoutService;
+
 @RestController
 @CrossOrigin
 public class GymWorkoutController {
@@ -50,7 +51,24 @@ public class GymWorkoutController {
 
 	@PatchMapping("/updateGymWorkout/{id}")
 	public GymWorkout update(@PathVariable("id") int id, @PathParam("muscleGroup") String muscleGroup,
-			@PathParam("exercise") String exercise, @PathParam("weight") Integer weight, @PathParam("sets") Integer sets, @PathParam("reps") Integer reps) {
+			@PathParam("exercise") String exercise, @PathParam("weight") Integer weight,
+			@PathParam("sets") Integer sets, @PathParam("reps") Integer reps) {
+		GymWorkout existing = getById(id);
+
+		if (existing != null) {
+
+			if ("".equals(muscleGroup)) {
+
+				muscleGroup = existing.getMuscleGroup();
+
+			}
+
+			if ("".equals(exercise)) {
+
+				exercise = existing.getExercise();
+			}
+
+		}
 		return this.service.update(id, muscleGroup, exercise, weight, sets, reps);
 	}
 
