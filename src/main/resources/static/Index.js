@@ -70,8 +70,11 @@ function renderGymWorkouts() {
                 gymWorkoutUpdate.innerText = "UPDATE";
                 gymWorkoutUpdate.classList.add("btn", "btn-secondary");
                 gymWorkoutUpdate.addEventListener("click", () => {
-                    console.log("GYMWORKOUT: ", gymWorkout);
-                    updateGymWorkout(gymWorkout.id);
+                    if (confirm('Are you sure?')) {
+                        txt = console.log(updateGymWorkout(gymWorkout.id));
+                    } else {
+                    txt = "You pressed cancel";
+                    }
                 });
                 gymWorkoutDiv.appendChild(gymWorkoutUpdate);
 
