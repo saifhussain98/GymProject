@@ -12,55 +12,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
         integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            section {
+              position:relative; left:10px;
+            }
+            div {
+              position:relative; left:30px;
+            }
+            ul {
+              position:relative; right:15px;
+            }
+          </style>
 </head>
-<ul class="nav justify-content-right">
+    <body class= "container">
+        <section class=" header">
+            <div class="row">
+                <ul class="nav justify-content-right">
             
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">Home</a>
-    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
     
-    <li class="nav-item">
-      <a class="nav-link" href="GymWorkout.html">Create Workout</a>
-    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="GymWorkout.html">Create Workout</a>
+                    </li>
     
-    <li class="nav-item">
-      <a class="nav-link"  href="search.html">My Workouts</a>
-    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="search.html">My Workouts</a>
+                    </li>
 
-  </ul>
-<!-- <body style="color: antiquewhite; background-color: #1d2630; -->
-<body>
-    <h1>Create your own Workout!</h1>
-    <h5>Want to track your progress in the gym? Create and track your workouts below!</h5>
-    <br>
-    <body class="container">
+                </ul>
+            </div>
+            
     <main class="row">
-        <section class="col-12">
+        <section class="col-3">
+                <h2>Create your own Workout!</h2>
+                <h5>Want to track your progress in the gym? Create and track your workouts below!</h5>
+                <br>
             <form id="gymWorkout">
-                <label class="form-label" for="gymWorkoutMuscleGroup">MuscleGroup:</label>
-                <input class="form-control" type="text" name="muscleGroup" id="gymWorkoutMuscleGroup" required>
-                <label class="form-label" for="gymWorkoutExercise">Exercise:</label>
-                <input class="form-control" type="text" name="exercise" id="gymWorkoutExercise">
-                <label class="form-label" for="gymWorkoutWeight">Weight:</label>
-                <input class="form-control" type="text" name="weight" id="gymWorkoutWeight" min="0">
-                <label class="form-label" for="gymWorkoutSets">Sets:</label>
-                <input class="form-control" type="text" name="sets" id="gymWorkoutSets" min="0">
-                <label class="form-label" for="gymWorkoutReps">Reps:</label>
-                <input class="form-control" type="text" name="reps" id="gymWorkoutReps" min="0">
+                    <label class="form-label" for="gymWorkoutMuscleGroup">MuscleGroup:</label>
+                    <input class="form-control" type="text" name="muscleGroup" id="gymWorkoutMuscleGroup" required>
+                    <label class="form-label" for="gymWorkoutExercise">Exercise:</label>
+                    <input class="form-control" type="text" name="exercise" id="gymWorkoutExercise">
+                    <label class="form-label" for="gymWorkoutWeight">Weight:</label>
+                    <input class="form-control" type="text" name="weight" id="gymWorkoutWeight" min="0">
+                    <label class="form-label" for="gymWorkoutSets">Sets:</label>
+                    <input class="form-control" type="text" name="sets" id="gymWorkoutSets" min="0">
+                    <label class="form-label" for="gymWorkoutReps">Reps:</label>
+                    <input class="form-control" type="text" name="reps" id="gymWorkoutReps" min="0">
+                
                 <div class="mt-3">
                     <button class="btn btn-secondary" type="reset">RESET</button>
                     <button class="btn btn-primary" type="submit">SUBMIT</button>
-                </form>
-            </section>
-        <section class="col">
-            </div>
-        <div class="row">
-            <section class="col">
-                <div id="output" class="row row-cols-3 g-3"></div>
-            </section>
-        </div>
-    </main>
-    <script src="./GymWorkout.js"></script>
-</body>
+                </div>
+            </form>
+        </section>
 
+        <section class="col">
+            <div id="output" class="row row-cols-3 g-4"></div>
+        </section>
+    </main>
+            <script src="./GymWorkout.js"></script>
+        </section>
+    </body>
 </html>
