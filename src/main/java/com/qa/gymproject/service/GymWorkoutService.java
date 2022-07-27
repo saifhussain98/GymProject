@@ -9,8 +9,8 @@ public interface GymWorkoutService {
 	GymWorkout getById(int id);
 
 	List<GymWorkout> getAll();
-
-	GymWorkout findByMuscleGroup(String muscleGroup);
+	
+	List<GymWorkout> findByMuscleGroup(String muscleGroup);
 
 	GymWorkout create(GymWorkout gymWorkout);
 

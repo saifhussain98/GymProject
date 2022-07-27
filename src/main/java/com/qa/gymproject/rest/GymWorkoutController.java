@@ -37,7 +37,7 @@ public class GymWorkoutController {
 	}
 
 	@GetMapping("/getGymWorkoutByMuscleGroup/{muscleGroup}")
-	public GymWorkout getGymWorkoutByMuscleGroup(@PathVariable String muscleGroup) {
+	public List <GymWorkout> getGymWorkoutByMuscleGroup(@PathVariable String muscleGroup) {
 		return this.service.findByMuscleGroup(muscleGroup);
 	}
 

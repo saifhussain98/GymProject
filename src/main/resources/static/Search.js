@@ -1,46 +1,55 @@
-const gymProject = document.getElementById('gymProject');
-const searchBar = document.getElementById('searchBar');
-let gymWorkouts = [];
+document.getElementById('gymWorkoutsSearch').addEventListener("submit", function (event) {​​
+event.preventDefault();
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value.toLowerCase();
+const form = event.target;
 
-    const filteredGymWorkouts = gymWorkouts.filter((gymWorkout) => {
-        return (
-            gymWorkout.muscleGroup.toLowerCase().includes(searchString) ||
-            gymWorkout.exercise.toLowerCase().includes(searchString)
-            // gymWorkout.weight.toLowerCase().includes(searchInteger) ||
-            // gymWorkout.sets.toLowerCase().includes(searchInteger) ||
-            // gymWorkout.reps.toLowerCase().includes(searchInteger )
-            
-        );
-    });
-    displayGymWorkouts(filteredGymWorkouts);
-});
-const loadGymWorkouts = async () => {
-    try {
-        const res = await fetch('http://localhost:8080/getGymWorkouts');
-        console.log(res);
-        GymWorkouts = await res.json();
-        displayGymWorkouts(GymWorkouts);
-    } catch (err) {
-        console.error(err);
-    }
-};
-const displayGymWorkouts = (gymWorkouts) => {
-    const htmlString = gymWorkouts
-        .map((gymWorkout) => {
-            return `
-            <li class="gymWorkout">
-                <h2>${gymWorkout.muscleGroup}</h2>
-                <p>Exercise: ${gymWorkout.exercise}</p>
-                <p>Weight: ${gymWorkout.weight}</p>
-                <p>Sets: ${gymWorkout.sets}</p>
-                <p>Reps: ${gymWorkout.reps}</p>
-            </li>
-        `;
-        })
-        .join('');
-        gymWorkouts.innerHTML = htmlString;
-};
-loadGymWorkouts();
+axios.get(`http://localhost:8080/getGymWorkoutByMuscleGroup/${​​form.searchMuscleGroup.value}​​`)
+.then(res => {​​
+console.log("RESPONSE: ", res);
+form.searchMuscleGroup.focus();
+form.reset();
+console.log("success");
+var existingSearchDiv = document.getElementById('searchGymWorkoutsDiv');
+if (existingSearchDiv != null) {​​
+existingSearchDiv.remove();
+}​​
+for (let gymWorkout of res.data) {​​
+const gymWorkoutCol = document.createElement("div");
+gymWorkoutCol.id = "searchGymWorkoutDiv";
+gymWorkoutCol.classMuscleGroup = "col-10";
+
+const gymWorkoutCard = document.createElement("div");
+gymWorkoutCard.classMuscleGroup = "card";
+gymWorkoutCard.style.textAlign="center";
+gymWorkoutCol.appendChild(gymWorkoutCard);
+
+const gymWorkoutDiv = document.createElement("div");
+gymWorkoutDiv.classMuscleGroup = "card-body";
+gymWorkoutCard.appendChild(gymWorkoutDiv);
+
+const gymWorkoutMuscleGroup = document.createElement("p");
+gymWorkoutMuscleGroup.innerText = gymWorkout.muscleGroup;
+gymWorkoutDiv.appendChild(gymWorkoutMuscleGroup);
+
+const gymWorkoutExercise = document.createElement("p");
+gymWorkoutExercise.innerText = gymWorkout.exercise;
+gymWorkoutDiv.appendChild(gymWorkoutExercise);
+
+const gymWorkoutWeight = document.createElement("p");
+gymWorkoutWeight.innerText = gymWorkout.weight + " Kg";
+gymWorkoutDiv.appendChild(gymWorkoutWeight);
+
+const gymWorkoutSets = document.createElement("p");
+gymWorkoutSets.innerText = gymWorkout.sets;
+gymWorkoutDiv.appendChild(gymWorkoutSets);
+
+const gymWorkoutReps = document.createElement("p");
+gymWorkoutReps.innerText = gymWorkout.reps;
+gymWorkoutDiv.appendChild(gymWorkoutReps);
+
+output.prepend(gymWorkoutCol);
+}​​
+}​​)
+.catch(err => console.error(err));
+
+}​​);

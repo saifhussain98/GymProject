@@ -53,7 +53,7 @@ public class GymWorkoutServiceDB implements GymWorkoutService {
 	}
 
 	@Override
-	public GymWorkout findByMuscleGroup(String muscleGroup) {
+	public List<GymWorkout> findByMuscleGroup(String muscleGroup) {
 		// TODO Auto-generated method stub
 		return this.repo.findByMuscleGroupStartingWithIgnoreCase(muscleGroup);
 	}

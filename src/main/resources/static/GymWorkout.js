@@ -36,14 +36,15 @@ function renderGymWorkouts() {
             output.innerHTML = "";
             for (let gymWorkout of res.data) {
                 const gymWorkoutCol = document.createElement("div");
-                gymWorkoutCol.classMuscleGroup = "col-3";
+                gymWorkoutCol.className = "col-3";
 
                 const gymWorkoutCard = document.createElement("div");
-                gymWorkoutCard.classMuscleGroup = "card";
+                gymWorkoutCard.className = "card";
+                // gymWorkoutCard.style.textAlign= "center";
                 gymWorkoutCol.appendChild(gymWorkoutCard);
 
                 const gymWorkoutDiv = document.createElement("div");
-                gymWorkoutDiv.classMuscleGroup = "card-body";
+                gymWorkoutDiv.className = "card-body";
                 gymWorkoutCard.appendChild(gymWorkoutDiv);
 
                 const gymWorkoutMuscleGroup = document.createElement("h5");
@@ -68,7 +69,7 @@ function renderGymWorkouts() {
 
                 const gymWorkoutUpdate = document.createElement('button');
                 gymWorkoutUpdate.innerText = "UPDATE";
-                gymWorkoutUpdate.classList.add("btn", "btn-secondary");
+                gymWorkoutUpdate.classList.add("btn", "btn-secondary", "m-2");
                 gymWorkoutUpdate.addEventListener("click", () => {
                     if (confirm('Are you sure?')) {
                         console.log(updateGymWorkout(gymWorkout.id));

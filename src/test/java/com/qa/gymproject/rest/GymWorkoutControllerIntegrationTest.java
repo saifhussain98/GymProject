@@ -54,7 +54,8 @@ public class GymWorkoutControllerIntegrationTest {
 	
     @Test
     void testReadByMuscleGroup() throws Exception {
-    	GymWorkout testGymWorkoutMuscleGroup = new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8);
+    	List <GymWorkout> testGymWorkoutMuscleGroup = new ArrayList <GymWorkout>();
+    	testGymWorkoutMuscleGroup.add(new GymWorkout(1, "Chest", "Bench Press", 32, 3, 8));
         this.mvc.perform(get("/getGymWorkoutByMuscleGroup/Chest")).andExpect(status().isOk())
                 .andExpect(content().json(this.mapper.writeValueAsString(testGymWorkoutMuscleGroup)));
     }
