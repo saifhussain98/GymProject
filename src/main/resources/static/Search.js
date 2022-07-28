@@ -2,7 +2,7 @@ const gymProject = document.getElementById('output');
 const searchMuscleGroup = document.getElementById('searchMuscleGroup');
 let muscleGroupGymWorkouts = [];
 
-searchMuscleGroup.addEventListener('change', (e) => {
+searchMuscleGroup.addEventListener('input', (e) => {
     const searchString = e.target.value.toLowerCase();
     console.log(searchString);
     const filteredGymWorkouts = muscleGroupGymWorkouts.filter((gymWorkout) => {
