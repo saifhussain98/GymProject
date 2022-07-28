@@ -27,13 +27,13 @@ const displayGymWorkouts = (gymWorkouts) => {
     const htmlString = gymWorkouts
         .map((gymWorkout) => {
             return `
-            <li class="gymWorkout">
+            <div class="card m-3">
                 <h2>${gymWorkout.muscleGroup}</h2>
                 <p>Exercise: ${gymWorkout.exercise}</p>
                 <p>Weight: ${gymWorkout.weight + " Kg"}</p>
                 <p>Weight: ${gymWorkout.sets + " sets"}</p>
                 <p>Weight: ${gymWorkout.reps + " reps"}</p>
-            </li>
+            </div>
         `;
         })
         .join('');
