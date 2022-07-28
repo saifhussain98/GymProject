@@ -28,7 +28,7 @@ const displayGymWorkouts = (gymWorkouts) => {
         .map((gymWorkout) => {
             return `
             <div class="card m-3">
-                <h2>${gymWorkout.muscleGroup}</h2>
+                <h3>${gymWorkout.muscleGroup}</h3>
                 <p>Exercise: ${gymWorkout.exercise}</p>
                 <p>Weight: ${gymWorkout.weight + " Kg"}</p>
                 <p>Weight: ${gymWorkout.sets + " sets"}</p>

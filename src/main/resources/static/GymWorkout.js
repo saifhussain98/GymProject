@@ -36,7 +36,7 @@ function renderGymWorkouts() {
             output.innerHTML = "";
             for (let gymWorkout of res.data) {
                 const gymWorkoutCol = document.createElement("div");
-                gymWorkoutCol.className = "col-5";
+                gymWorkoutCol.className = "col-4";
 
                 const gymWorkoutCard = document.createElement("div");
                 gymWorkoutCard.className = "card";
@@ -46,7 +46,7 @@ function renderGymWorkouts() {
                 gymWorkoutDiv.className = "card-body";
                 gymWorkoutCard.appendChild(gymWorkoutDiv);
 
-                const gymWorkoutMuscleGroup = document.createElement("h4");
+                const gymWorkoutMuscleGroup = document.createElement("h3");
                 gymWorkoutMuscleGroup.innerText = gymWorkout.muscleGroup;
                 gymWorkoutDiv.appendChild(gymWorkoutMuscleGroup);
 
