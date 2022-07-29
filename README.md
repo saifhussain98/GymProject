@@ -72,19 +72,19 @@ The testing is carried out via JUnit and MockMVC. This covers the functionality 
 ![image](https://user-images.githubusercontent.com/105277308/181773614-35275162-62a8-4a87-a54e-8c78959504da.png)
 
 ## Deployment
-1. Clone the repository to your local device. 
-![image](https://user-images.githubusercontent.com/105277308/181772002-5fa6bf5e-a84b-42be-a8cf-dbf2e4c231c8.png)
+1. Clone the repository to your local device.
+![image](https://user-images.githubusercontent.com/105277308/181775633-c0de4b97-a6e0-4040-9fcd-cbfe966f2c7d.png)
 
 2. Open eclipse on your device and select; "File: > "Open projects from file system" > select the folder cloned "GymProject".
 ![image](https://user-images.githubusercontent.com/105277308/181772093-f32ff241-0403-4564-9163-3593ec5ed7f2.png)
-![image](https://user-images.githubusercontent.com/105277308/181772167-e994ed69-9839-4197-8b38-504128b65a17.png)
+![image](https://user-images.githubusercontent.com/105277308/181776000-59b3b31f-969a-4460-9439-58aff6de82ea.png)
 
 3. Change the application-prod.properties to create (You will need to edit the url, username and password accordingly).
-![image](https://user-images.githubusercontent.com/105277308/181772228-d76087a8-1bb4-498d-b676-e77d6426fd35.png)
+![image](https://user-images.githubusercontent.com/105277308/181776116-ac3e4007-fe4e-4998-801b-747eae2ac1bd.png)
 
 4. Run the project as spring-boot project and upon completion change "create" back to "validate".
 ![image](https://user-images.githubusercontent.com/105277308/181772320-e34ddd1c-cd0f-4d93-9b2c-955958190c1f.png)
-![image](https://user-images.githubusercontent.com/105277308/181772409-cb215e43-94d5-4cce-975f-3157107cb5a6.png)
+![image](https://user-images.githubusercontent.com/105277308/181776214-b8a033b2-0fbb-4e84-8bbe-29a94adc988a.png)
 
 5. Connect the MySQL local instance by selecting "connect database".
 6. Open the GUI via Visual Studio Code live server plugin.
@@ -94,7 +94,7 @@ The testing is carried out via JUnit and MockMVC. This covers the functionality 
 ![image](https://user-images.githubusercontent.com/105277308/181772556-442712d9-c060-434e-9217-1c7bb116b160.png)
 
 To make sure the database is holding the data, open the table in MySQL and the data entries should be collected.
-![image](https://user-images.githubusercontent.com/105277308/181772780-50234614-dc69-43ae-89ad-45d4e9bfa136.png)
+![image](https://user-images.githubusercontent.com/105277308/181776406-d5a249c1-40e1-454d-b9a1-e28daeef7ea0.png)
 
 ## Built With
 
