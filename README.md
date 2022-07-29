@@ -94,7 +94,7 @@ The testing is carried out via JUnit and MockMVC. This covers the functionality 
 ![image](https://user-images.githubusercontent.com/105277308/181772556-442712d9-c060-434e-9217-1c7bb116b160.png)
 
 To make sure the database is holding the data, open the table in MySQL and the data entries should be collected.
-![image](https://user-images.githubusercontent.com/105277308/181776406-d5a249c1-40e1-454d-b9a1-e28daeef7ea0.png)
+![image](https://user-images.githubusercontent.com/105277308/181776804-d4599939-79d0-4e9e-9191-406f0ef90581.png)
 
 ## Built With
 
