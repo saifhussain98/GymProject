@@ -7,8 +7,7 @@ searchMuscleGroup.addEventListener('input', (e) => {
     console.log(searchString);
     const filteredGymWorkouts = muscleGroupGymWorkouts.filter((gymWorkout) => {
         return (
-            gymWorkout.muscleGroup.toLowerCase().includes(searchString) ||
-            gymWorkout.exercise.toLowerCase().includes(searchString)
+            gymWorkout.muscleGroup.toLowerCase().includes(searchString)
             
         );
     });
